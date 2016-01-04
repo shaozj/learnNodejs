@@ -1,0 +1,65 @@
+.__console {
+  position: fixed;
+  top: 600px;
+  left: 20px;
+  background-color: #fff;
+  font-size: 20px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/*标题*/
+#page-title {
+  width: 100%;
+  padding-top: 60px;
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+}
+/*top_time*/
+#J_time {
+  position: absolute;
+  top: 12px;
+  left: 1800px;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  font-size: 36px;
+}
+.hidden {
+  display: none;
+}
+/*焦点框*/
+#focus {
+  position: fixed;
+  box-shadow: 0px 0px 20px #ffa500;
+  border: 6px solid #fff;
+  width: 0;
+  height: 0;
+  z-index: 999;
+}
+#focus #innerFocus {
+  border: 2px solid #000;
+}
+/*蒙版*/
+#mainWrapper .itemList .mask {
+  content: " ";
+  position: absolute;
+  top: 12px;
+  display: block;
+  width: 360px;
+  height: 480px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
