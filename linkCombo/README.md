@@ -2,7 +2,6 @@
 
 #### 1、介绍
 
-项目地址：[http://gitlab.alibaba-inc.com/zhenjiang.szj/linkCombo](http://gitlab.alibaba-inc.com/zhenjiang.szj/linkCombo)
 
 将html中的css和js引用combo成一个或几个引用。
 
