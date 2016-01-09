@@ -1,0 +1,60 @@
+2016-01-08 19:24:14.943 nodejs.ErrorException: Error: test
+    at Object.<anonymous> (/Users/shaozj/Documents/study/gitHub/learnNodejs/learnKoa/book/demo.js:19:14)
+    at Module._compile (module.js:398:26)
+    at Object.Module._extensions..js (module.js:405:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:430:10)
+    at startup (node.js:141:18)
+    at node.js:1003:3
+pid: 18043
+Host: shaozjdeMacBook-Pro.local
+URL: 
+Data: ''
+2016-01-08 19:24:14.943
+
+2016-01-08 19:26:48.134 nodejs.ErrorException: Error: test
+    at Object.<anonymous> (/Users/shaozj/Documents/study/gitHub/learnNodejs/learnKoa/book/demo.js:20:14)
+    at Module._compile (module.js:398:26)
+    at Object.Module._extensions..js (module.js:405:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:430:10)
+    at startup (node.js:141:18)
+    at node.js:1003:3
+pid: 18102
+Host: shaozjdeMacBook-Pro.local
+URL: 
+Data: ''
+2016-01-08 19:26:48.134
+
+2016-01-08 19:27:23.551 nodejs.ErrorException: Error: test
+    at Object.<anonymous> (/Users/shaozj/Documents/study/gitHub/learnNodejs/learnKoa/book/demo.js:20:14)
+    at Module._compile (module.js:398:26)
+    at Object.Module._extensions..js (module.js:405:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:430:10)
+    at startup (node.js:141:18)
+    at node.js:1003:3
+pid: 18116
+Host: shaozjdeMacBook-Pro.local
+URL: 
+Data: ''
+2016-01-08 19:27:23.551
+
+2016-01-08 19:28:52.716 nodejs.ErrorException: Error: test
+    at Object.<anonymous> (/Users/shaozj/Documents/study/gitHub/learnNodejs/learnKoa/book/demo.js:20:14)
+    at Module._compile (module.js:398:26)
+    at Object.Module._extensions..js (module.js:405:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:430:10)
+    at startup (node.js:141:18)
+    at node.js:1003:3
+pid: 18153
+Host: shaozjdeMacBook-Pro.local
+URL: 
+Data: ''
+2016-01-08 19:28:52.716
+

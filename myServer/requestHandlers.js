@@ -6,8 +6,11 @@ var querystring = require("querystring"),
 	fs = require("fs"),
 	formidable = require("formidable");
 
+var count = 0;
 function start(response, postData){
+	count ++;
 	console.log("Request handler 'start' was called.");
+	console.log("count: " + count);
 
 	var body = '<html>'
 				+ '<head>'
