@@ -1,16 +1,35 @@
 // 一个最简单的co实现
 
+// 判断是否是generator function
+function isGeneratorFunction(obj){
+	var constructor = obj.constructor;
+	if(!constructor) return false;
+	if('GeneratorFunction' === constructor.name || 'GeneratorFunction' === constructor.displayName)
+		return true;
+	return isGenerator(constructor.prototype);
+}
+
+// 判断是否是generator对象
+function isGenerator(obj){
+	return 'function' == typeof obj.next && 'function' == typeof obj.throw;
+}
+
 function co(fn){
 	return function(done){
 		var ctx = this;
-		console.log(this);
 		var gen = fn.call(ctx);
 		var it = null;
 		function _next(err, res){
 			if(err) res = err;
 			it = gen.next(res);
 			if(!it.done){
-				it.value(_next);
+				if(isGeneratorFunction(it.value)){
+					co(it.value).call(ctx, _next);
+				}else{
+					it.value(_next);
+				}
+			}else{
+				done && done.call(ctx);
 			}
 		}
 		_next();
@@ -25,12 +44,19 @@ function read(file){
 	}
 }
 
-co(function *(){
-	var c = 2;
-	console.log(c);
-	var a = yield read('error.js');
-	console.log(a.length);
+function *gf1(){
+	this.a = yield read('app.js');
+}
 
-	var b = yield read('package.json');
-	console.log(b.length);
+function *gf2(){
+	this.b = yield read('package.json');
+}
+
+co(function *(){
+	yield gf1;
+	yield gf2;
+	console.log(this.a.length);
+	console.log(this.b.length);
 })();
+
+

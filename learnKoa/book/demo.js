@@ -38,6 +38,26 @@ app.get('/config', function *(){
 	logger.router('Page view: ' + ++pageView);
 });
 
+// 新建 /api/user/:id 路由，返回一个用户信息
+app.get('/api/user/:id', function *(){
+	var user = {name:'minghe', email:'minghe36@gmail.com'};
+	user = JSON.stringify(user);
+	this.body = user;
+});
+
+// xtemplate 模板引擎对koa对适配
+var xtpl = require('xtpl/lib/koa');
+// xtemplate 模板渲染
+xtpl(app, {
+	// 配置模板目录，指向工程的view目录
+	views: config.viewDir
+});
+
+app.get('/view-test', function *(){
+	yield this.render('test', {"title": "xtemplate demo"});
+});
+
+
 onerror(app);
 
 // app.get('/', function *(){
@@ -70,3 +90,6 @@ app.on('error', function(err, ctx){
 
 
 app.listen(3000);
+
+module.exports = app;
+
