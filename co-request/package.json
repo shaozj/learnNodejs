@@ -1,0 +1,36 @@
+{
+  "name": "co-request",
+  "version": "0.0.0",
+  "description": "wrap http request with co",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "http",
+    "request",
+    "co"
+  ],
+  "author": "shaozj",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "*",
+    "netrc": "~0.1.3",
+    "write-to": "^1.0.0",
+    "raw-body": "^1.1.2",
+    "statuses": "^1.0.2"
+  },
+  "devDependencies": {
+    "koa": "0",
+    "koa-basic-quth": "^1.1.0",
+    "co": "^3.0",
+    "mocha": "^1.6",
+    "should": "^3.0",
+    "istanbul-harmony": "~0.2.9"
+  },
+  "scripts": {
+    "test": "mocha --harmony-generators --require should --reporter spec",
+    "test-cov": "node --harmony-generators ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should",
+    "test-travis": "node --harmony-generators ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --require should"
+  }
+}
