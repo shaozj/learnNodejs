@@ -116,12 +116,12 @@ function share(defaults) {
         res.on('error', stream.emit.bind(stream, 'error'));
         // forward close
         // creates the following error:
-        // Assertion failed: (!write_in_progress_ && "wirte in progress"), function Close, file ../src/node_zlib.cc, line 99.
+        // Assertion failed: (!write_in_progress_ && "write in progress"), function Close, file ../src/node_zlib.cc, line 99.
         // make: *** [test] Abort trap: 6
         // res.on('close', stream.close.bind(stream))
-        // forward desroty
-        // note: if zlib adds a .destory method, we have to change this
-        stream.desroty = res.destory.bind(res);
+        // forward destroy
+        // note: if zlib adds a .destroy method, we have to change this
+        stream.destroy = res.destroy.bind(res);
         res = stream;
       } else {
         res.res = res;
