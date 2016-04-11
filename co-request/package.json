@@ -22,11 +22,11 @@
   },
   "devDependencies": {
     "koa": "0",
-    "koa-basic-quth": "^1.1.0",
+    "koa-basic-auth": "^1.1.0",
     "co": "^3.0",
     "mocha": "^1.6",
     "should": "^3.0",
-    "istanbul-harmony": "~0.2.9"
+    "istanbul-harmony": "~0.3.16"
   },
   "scripts": {
     "test": "mocha --harmony-generators --require should --reporter spec",
