@@ -17,7 +17,7 @@ exports = module.exports = share();
 exports.default = share;
 
 function share(defaults) {
-  // options for all coRequest instances
+  // default options for all coRequest instances
   defaults = defaults || {};
   defaults.retries = defaults.retries || 0;
   defaults.redirects = 'redirects' in defaults ? defaults.redirects : 3;

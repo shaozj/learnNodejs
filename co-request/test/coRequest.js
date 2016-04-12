@@ -9,18 +9,48 @@ var http = require('http')
 
 var request = require('..')
 
-var tmpdir = os.tmpdir()
 var uri = 'https://raw.github.com/component/domify/84b1917ea5a9451f5add48c5f61e477f2788532b/component.json'
 var redirect = 'https://raw.github.com/jonathanong/inherits/master/component.json'
 
 describe('cogent', function () {
   it('should work with HTTPS', co(function* () {
-    var res = yield* request(uri, true);
-    console.log(res.statusCode);
-    console.log(res.body);
+    this.timeout(10000);
+    var res = yield* request(uri);
     res.statusCode.should.equal(200);
     res.headers['content-encoding'].should.equal('gzip');
     res.resume();
   }))
+
+  it('should save to a file', co(function* () {
+    this.timeout(10000);
+    var destination = path.join(__dirname, Math.random().toString(36).slice(2));
+    var res = yield* request(uri, destination);
+    res.statusCode.should.equal(200);
+    res.destination.should.equal(destination);
+    fs.statSync(destination);
+  }))
+
+  it('should resolve redirects', co(function* () {
+    this.timeout(10000);
+    var res = yield* request(redirect, true);
+    res.urls.length.should.equal(2);
+    res.statusCode.should.equal(200);
+    res.body.name.should.equal('inherits');
+  }))
+
+  it('should not resolve redirects', co(function* () {
+    var res = yield* request(redirect, {string: true, redirects: 0, method: 'GET'});
+    res.statusCode.should.equal(301);
+  }))
+
+  it('should work with retries', co(function* () {
+    var res = yield* request(uri, {
+      retries: 2
+    });
+    res.statusCode.should.equal(200);
+    res.headers['content-encoding'].should.equal('gzip');
+    res.resume();
+  }))
+
 })
 
