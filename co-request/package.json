@@ -29,7 +29,7 @@
     "istanbul-harmony": "~0.3.16"
   },
   "scripts": {
-    "test": "mocha --harmony-generators --require should --reporter spec",
+    "test": "mocha --harmony --require should --reporter spec",
     "test-cov": "node --harmony-generators ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should",
     "test-travis": "node --harmony-generators ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --require should"
   }

@@ -56,7 +56,7 @@ function share(defaults) {
     while (true) {
       // create the request options object
       urls.push(o = url.parse(uri));
-      securrrr = o.protocol === 'https';
+      securrrr = o.protocol === 'https:';
       o.headers = options.headers;
       o.method = options.method || defaults.method;
 
