@@ -1,10 +1,11 @@
 {
   "name": "co-request",
   "version": "0.0.0",
-  "description": "wrap http request with co",
+  "description": "wrap http/https request with co",
   "main": "lib/index.js",
   "keywords": [
     "http",
+    "https",
     "request",
     "co"
   ],
@@ -27,7 +28,7 @@
   },
   "scripts": {
     "test": "mocha --harmony --require should --reporter spec",
-    "test-cov": "node --harmony-generators ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should",
-    "test-travis": "node --harmony-generators ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --require should"
+    "test-cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should",
+    "test-travis": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --require should"
   }
 }
