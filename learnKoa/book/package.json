@@ -19,7 +19,7 @@
     "mini-logger": "1.0.0",
     "xtemplate": "4.2.4",
     "xtpl": "3.1.9",
-    "debug": "2.0.0",
+    "debug": "4.1.1",
     "co-urllib": "0.2.3",
     "co": "3.1.0",
     "underscore": "1.7.0"
